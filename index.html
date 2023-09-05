@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lastest RAOT Hacks</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('a2.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white; /* White background */
+            border: 5px solid black; /* Black border */
+            padding: 20px; /* Add some padding */
+        }
+
+        .container h1, .container p {
+            font-family: inherit;
+        }
+
+        .hidden {
+            display: none; /* Hide elements with this class */
+        }
+
+        .code-text {
+            font-family: 'Courier New', monospace; /* Use a monospace font for code-like appearance */
+            color: #00ff00; /* Code green color */
+            position: absolute; /* Position the text absolutely */
+            left: 80px; /* Move the text to the left by 80 pixels */
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(4px, -4px);
+            }
+            50% {
+                transform: translate(-4px, 4px);
+            }
+            75% {
+                transform: translate(4px, -4px);
+            }
+            100% {
+                transform: translate(-4px, 4px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><strong>Insta Kill Hacks</strong></h1>
+        <p id="play-audio">Raot Hacks V3.02</p>
+    </div>
+
+    <audio id="audio-player" src="ada.mp3"></audio>
+
+    <script>
+        const playAudioText = document.getElementById("play-audio");
+        const audioPlayer = document.getElementById("audio-player");
+        const container = document.querySelector(".container");
+        const codeText = document.createElement("div");
+        codeText.className = "code-text hidden";
+
+        const textLines = [
+            "You have been hacked by Monarch",
+            "This website has been scanning your computer",
+            "Results:",
+            "Scanning for IP.......................Detected",
+            "Scanning for Credit Card..............Not Detected",
+            "Scanning for Usernames & Passwords....Sent to Mornach",
+            "Search History........................Sent to Monarch",
+            ".",
+            ".",
+            ".",
+            "Thank you for attempting to hack in RAOT - Monarch",
+        ];
+
+        let currentIndex = 0;
+
+        function printNextLine() {
+            if (currentIndex < textLines.length) {
+                codeText.innerHTML += `<p>${textLines[currentIndex]}</p>`;
+                currentIndex++;
+                setTimeout(printNextLine, 2000); // Print next line after 2 seconds
+            }
+        }
+
+        playAudioText.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                container.classList.add("hidden"); // Hide the container
+                codeText.classList.remove("hidden"); // Show the new code-like text
+                document.body.style.backgroundImage = "url('a1.jpg')";
+                printNextLine(); // Start printing the lines one by one
+            } else {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                container.classList.remove("hidden"); // Show the container
+                codeText.classList.add("hidden"); // Hide the new code-like text
+                document.body.style.backgroundImage = "url('a2.jpg')";
+                currentIndex = 0; // Reset the index for the next click
+                codeText.innerHTML = ""; // Clear the printed lines
+            }
+        });
+
+        document.body.appendChild(codeText); // Add the code-like text to the body
+    </script>
+</body>
+</html>
